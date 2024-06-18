@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
 import NoteScreen from "../screens/NoteScreen";
 import SplashScreen from "../screens/SplashScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 const Tabs = createMaterialBottomTabNavigator();
@@ -20,6 +21,7 @@ export default function AppNavigation() {
       >
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="TabNavigator" component={TabNavigator} />
+        <Stack.Screen name = "LoginScreen" component = {LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -43,6 +45,14 @@ const TabNavigator = () => {
           tabBarIcon: "note",
         }}
         component={NoteScreen}
+      />
+            <Tabs.Screen
+        name="LoginScreen"
+        options={{
+          tabBarLabel: "Login",
+          tabBarIcon: "login",
+        }}
+        component={LoginScreen}
       />
     </Tabs.Navigator>
   );
